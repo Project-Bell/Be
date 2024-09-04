@@ -5,9 +5,9 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Message<T> {
+public class Message {
     private String message;
-    private T data;
+    private Object data;
 
     @Override
     public String toString() {

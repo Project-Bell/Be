@@ -1,16 +1,17 @@
 package domain.bell.entity;
 
 
+import domain.bell.dto.BellRequestDto;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Bell {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +23,11 @@ public class Bell {
     @Column
     private String content;
 
+
+
+    public void update(BellRequestDto requestDto){
+        this.keyword = requestDto.getKeyword();
+        this.content = requestDto.getContent();
+    }
 
 }

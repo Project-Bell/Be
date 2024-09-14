@@ -1,4 +1,4 @@
-package util.returnMessage;
+package org.bell.returnMessage;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

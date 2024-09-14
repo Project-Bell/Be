@@ -1,7 +1,7 @@
-package domain.bell.dto;
+package org.bell.domain.bell.dto;
 
 
-import domain.bell.entity.Bell;
+import org.bell.domain.bell.entity.Bell;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

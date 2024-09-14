@@ -1,18 +1,17 @@
-package domain.bell.controller;
+package org.bell.domain.bell.controller;
 
 
-import domain.bell.dto.BellDto;
-import domain.bell.dto.BellRequestDto;
-import domain.bell.service.BellService;
+import org.bell.domain.bell.dto.BellDto;
+import org.bell.domain.bell.dto.BellRequestDto;
+import org.bell.domain.bell.service.BellService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import util.returnMessage.Message;
+import org.bell.returnMessage.Message;
 
 @RestController
-@RequestMapping("api/bell/")
+@RequestMapping("/api/bell/")
 @RequiredArgsConstructor
-
 public class BellController {
 
     private final BellService bellService;

@@ -1,7 +1,7 @@
-package domain.bell.entity;
+package org.bell.domain.bell.entity;
 
 
-import domain.bell.dto.BellRequestDto;
+import org.bell.domain.bell.dto.BellRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +22,8 @@ public class Bell {
 
     @Column
     private String content;
+    @Column(columnDefinition = "Long default 0", nullable = false)
+    private Long hit;
 
 
 

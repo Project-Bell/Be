@@ -1,23 +1,20 @@
-package domain.bell.service;
+package org.bell.domain.bell.service;
 
 
-import domain.bell.dto.BellDto;
-import domain.bell.dto.BellRequestDto;
-import domain.bell.dto.BellResponseDto;
-import domain.bell.entity.Bell;
-import domain.bell.repository.BellRepository;
+import org.bell.domain.bell.dto.BellDto;
+import org.bell.domain.bell.dto.BellRequestDto;
+import org.bell.domain.bell.dto.BellResponseDto;
+import org.bell.domain.bell.entity.Bell;
+import org.bell.domain.bell.repository.BellRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import util.returnMessage.Message;
+import org.bell.returnMessage.Message;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -38,6 +35,13 @@ public class BellService {
         //실시간 top10 키워드
         //인기검색
         return null;
+    }
+
+    @Transactional
+    public ResponseEntity<Message> readOne(Long BellId){
+       Bell bell = findById(BellId);
+
+       return null;
     }
 
 

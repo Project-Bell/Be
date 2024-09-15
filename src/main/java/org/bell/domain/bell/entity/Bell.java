@@ -1,9 +1,12 @@
 package org.bell.domain.bell.entity;
 
 
+import lombok.experimental.SuperBuilder;
 import org.bell.domain.bell.dto.BellRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
+import org.bell.util.timeStamped.Timestamped;
+import org.hibernate.annotations.ColumnDefault;
 
 
 @Entity
@@ -11,8 +14,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Bell {
+@SuperBuilder
+public class Bell extends Timestamped {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +25,9 @@ public class Bell {
 
     @Column
     private String content;
-    @Column(columnDefinition = "Long default 0", nullable = false)
+
+    @Column(nullable = false)
+    @ColumnDefault("0")
     private Long hit;
 
 
